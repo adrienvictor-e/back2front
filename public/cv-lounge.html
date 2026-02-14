@@ -1,0 +1,507 @@
+<!-- ★ FINAL APPROVED VERSION — 2026-02-14 — "Spy-Fi Lounge" design ★ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Adrien Victor Esquerre — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    width: 210mm;
+    height: 297mm;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body { overflow: hidden; }
+
+  /* ─── Page — warm parchment with vignette ─── */
+  .page {
+    width: 210mm;
+    height: 297mm;
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+  }
+
+  /* Corner brackets — top-left */
+  .page::before {
+    content: "";
+    position: absolute;
+    top: 10mm;
+    left: 10mm;
+    width: 14mm;
+    height: 14mm;
+    border-top: 0.4px solid #c8963e;
+    border-left: 0.4px solid #c8963e;
+    z-index: 1;
+  }
+
+  /* Corner brackets — bottom-right */
+  .page::after {
+    content: "";
+    position: absolute;
+    bottom: 10mm;
+    right: 10mm;
+    width: 14mm;
+    height: 14mm;
+    border-bottom: 0.4px solid #c8963e;
+    border-right: 0.4px solid #c8963e;
+    z-index: 1;
+  }
+
+  /* ─── Diamond lattice — positioned element ─── */
+  .pattern {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 160mm;
+    height: 140mm;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+      repeating-linear-gradient(
+        55deg, transparent, transparent 13px,
+        rgba(160,130,60,0.22) 13px, rgba(160,130,60,0.22) 13.5px),
+      repeating-linear-gradient(
+        -55deg, transparent, transparent 13px,
+        rgba(160,130,60,0.22) 13px, rgba(160,130,60,0.22) 13.5px);
+  }
+
+  /* Fade overlay — softens pattern edges */
+  .pattern-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 160mm;
+    height: 140mm;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+      /* Fade from top */
+      linear-gradient(to bottom,
+        rgba(255,255,255,1) 0%,
+        rgba(255,255,255,0.95) 10%,
+        rgba(255,255,255,0.3) 40%,
+        transparent 65%),
+      /* Fade from right */
+      linear-gradient(to left,
+        rgba(255,255,255,1) 0%,
+        rgba(255,255,255,0.7) 20%,
+        transparent 55%),
+      /* Clear bottom-right corner */
+      radial-gradient(circle at 100% 100%,
+        rgba(255,255,255,1) 40mm, transparent 80mm);
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    padding: 28mm 28mm 16mm;
+    color: #2d2926;
+  }
+
+  /* ─── Header ─── */
+  .header {
+    text-align: center;
+    margin-bottom: 4px;
+  }
+
+  .name-first {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 9px;
+    text-transform: uppercase;
+    color: #7a6e62;
+    margin-bottom: 1px;
+  }
+
+  .name-last {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 600;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    color: #2d2926;
+    line-height: 1.1;
+  }
+
+  /* ─── Diamond divider ─── */
+  .gem-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 12px auto;
+    max-width: 100px;
+  }
+
+  .gem-div::before,
+  .gem-div::after {
+    content: "";
+    flex: 1;
+    height: 0.35px;
+    background: #c8963e;
+  }
+
+  .gem {
+    width: 4.5px;
+    height: 4.5px;
+    background: #c8963e;
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  /* ─── Tagline ─── */
+  .tagline {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 400;
+    font-style: italic;
+    color: #7a6e62;
+    line-height: 1.7;
+    margin-bottom: 8px;
+  }
+
+  /* ─── Contact ─── */
+  .contact {
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10.5px;
+    color: #9c9389;
+    letter-spacing: 0.4px;
+    line-height: 1.8;
+  }
+
+  .contact a {
+    color: #96782a;
+    text-decoration: none;
+  }
+
+  .csep {
+    color: #c8963e;
+    margin: 0 5px;
+  }
+
+  /* ─── Section headers ─── */
+  .sh {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 16px 0 10px;
+  }
+
+  .sh::before,
+  .sh::after {
+    content: "";
+    flex: 1;
+    height: 0.3px;
+    background: #c8963e;
+  }
+
+  .sh-t {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c8963e;
+    white-space: nowrap;
+  }
+
+  /* ─── Skills ─── */
+  .skills {
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11.5px;
+    color: #3d3832;
+    line-height: 1.9;
+    letter-spacing: 0.2px;
+  }
+
+  .sk {
+    color: #c8963e;
+    margin: 0 3px;
+    font-size: 6px;
+    vertical-align: middle;
+  }
+
+  /* ─── Experience ─── */
+  .jobs {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+  }
+
+  .jh {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .jt {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #2d2926;
+  }
+
+  .jd {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    color: #9c9389;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+  }
+
+  .jc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11.5px;
+    font-weight: 500;
+    color: #96782a;
+    margin-bottom: 2px;
+  }
+
+  .jb {
+    list-style: none;
+    padding: 0;
+  }
+
+  .jb li {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    color: #524d47;
+    line-height: 1.5;
+    padding-left: 10px;
+    position: relative;
+  }
+
+  .jb li::before {
+    content: "\2013";
+    position: absolute;
+    left: 0;
+    color: #c8963e;
+  }
+
+  /* ─── Bottom row ─── */
+  .bottom {
+    display: flex;
+    gap: 24px;
+  }
+
+  .bcol {
+    flex: 1;
+  }
+
+  .bcol.narrow {
+    flex: 0.5;
+  }
+
+  .bh {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    color: #c8963e;
+    margin-bottom: 7px;
+    padding-bottom: 3px;
+    border-bottom: 0.3px solid rgba(200,150,62,0.25);
+  }
+
+  .edu-item {
+    margin-bottom: 6px;
+  }
+
+  .edu-deg {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #2d2926;
+  }
+
+  .edu-sch {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    color: #9c9389;
+  }
+
+  .cert {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10.5px;
+    color: #524d47;
+    margin-bottom: 4px;
+    padding-left: 9px;
+    position: relative;
+  }
+
+  .cert::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 3px;
+    height: 3px;
+    background: #c8963e;
+    transform: rotate(45deg);
+  }
+
+  .langs {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11.5px;
+    color: #3d3832;
+    line-height: 2.1;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<div class="pattern"></div>
+<div class="pattern-fade"></div>
+<div class="content">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="name-first">Adrien Victor</div>
+    <div class="name-last">Esquerre</div>
+  </div>
+
+  <div class="gem-div"><span class="gem"></span></div>
+
+  <div class="tagline">
+    Senior DevOps Engineer<br>
+    Infrastructure as Code &middot; AI Agent Orchestration
+  </div>
+
+  <div class="contact">
+    Prague, Czechia<span class="csep">&middot;</span>+420 77 888 44 56<span class="csep">&middot;</span>esquerre.adrien@gmail.com<br>
+    <a href="https://linkedin.com/in/adrienvictor">linkedin.com/in/adrienvictor</a><span class="csep">&middot;</span><a href="https://adrienvictor.com">adrienvictor.com</a>
+  </div>
+
+  <!-- Skills -->
+  <div class="sh"><span class="sh-t">Skills</span></div>
+  <div class="skills">
+    Terraform<span class="sk">&bull;</span>AWS<span class="sk">&bull;</span>Ansible<span class="sk">&bull;</span>Docker<span class="sk">&bull;</span>Python<span class="sk">&bull;</span>GitHub Actions<span class="sk">&bull;</span>Jenkins<br>
+    Elasticsearch<span class="sk">&bull;</span>Grafana<span class="sk">&bull;</span>Linux<span class="sk">&bull;</span>Bash<span class="sk">&bull;</span>Git<span class="sk">&bull;</span>AI Agents<span class="sk">&bull;</span>n8n
+  </div>
+
+  <!-- Experience -->
+  <div class="sh"><span class="sh-t">Experience</span></div>
+  <div class="jobs">
+
+    <div class="job">
+      <div class="jh">
+        <span class="jt">Infrastructure Engineer</span>
+        <span class="jd">Jun 2022 &ndash; Present</span>
+      </div>
+      <div class="jc">MSD Czech Republic</div>
+      <ul class="jb">
+        <li>Automated Elasticsearch cluster provisioning and configuration through Ansible playbooks, Terraform/Terragrunt modules, and CI/CD pipelines (Jenkins, GitHub Actions)</li>
+        <li>Architecture design and infrastructure provisioning for Disaster Recovery to back up AWS regions holding Logic Monitor clusters</li>
+        <li>Built modular Python tooling to monitor and tune Elasticsearch/ELK stack performance via automated API orchestration</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="jh">
+        <span class="jt">Full-stack Developer</span>
+        <span class="jd">Sep 2020 &ndash; May 2022</span>
+      </div>
+      <div class="jc">Freelance</div>
+      <ul class="jb">
+        <li>Delivered end-to-end web and e-commerce applications for clients using React.js, Node.js, and WordPress</li>
+        <li>Deployed and maintained cloud infrastructure on AWS, handling CI/CD, hosting, and domain configuration</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="jh">
+        <span class="jt">Google Ads Consultant</span>
+        <span class="jd">Nov 2019 &ndash; Sep 2020</span>
+      </div>
+      <div class="jc">Accenture (for Google), Ireland</div>
+      <ul class="jb">
+        <li>Technical solutions for Google Ads, YouTube Ads, Merchant Center; optimized ROI for French clients</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="jh">
+        <span class="jt">EDI Specialist</span>
+        <span class="jd">Oct 2018 &ndash; Oct 2019</span>
+      </div>
+      <div class="jc">Arvato, Germany</div>
+      <ul class="jb">
+        <li>Managed EDI data mapping and integration pipelines for medical product supply chains, including SAP-based order tracking and ML-assisted classification</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="jh">
+        <span class="jt">Magistrate Judge</span>
+        <span class="jd">2015 &ndash; 2018</span>
+      </div>
+      <div class="jc">Consejo de la Judicatura, Ecuador</div>
+      <ul class="jb">
+        <li>Presided over district court hearings and authored published judicial verdicts in public procurement, comptroller general, administrative disciplinary law, and intellectual property. Published verdicts: adrienesquerre.blogspot.com</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Bottom -->
+  <div class="sh"><span class="sh-t">Education &amp; Qualifications</span></div>
+  <div class="bottom">
+
+    <div class="bcol">
+      <div class="bh">Education</div>
+      <div class="edu-item">
+        <div class="edu-deg">MSc Advanced Legal Sciences</div>
+        <div class="edu-sch">Universitat Pompeu Fabra, Barcelona &middot; 2008</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-deg">Lawyer</div>
+        <div class="edu-sch">UISEK University, Ecuador &middot; 2007</div>
+      </div>
+    </div>
+
+    <div class="bcol">
+      <div class="bh">Certifications</div>
+      <div class="cert">AWS Certified Developer Associate &middot; 2021</div>
+      <div class="cert">Google Ads Certified &middot; 2020</div>
+      <div class="cert">Google Analytics Certified &middot; 2020</div>
+    </div>
+
+    <div class="bcol narrow">
+      <div class="bh">Languages</div>
+      <div class="langs">
+        English<br>
+        French<br>
+        Spanish
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer diamond -->
+  <div class="gem-div" style="margin-top: 18px"><span class="gem"></span></div>
+
+</div>
+</div>
+</body>
+</html>
