@@ -17,7 +17,7 @@ function Footer() {
           </div>
         </Link>
           <a class='website-rights' href="https://adrienvictor-e.github.io/back2front/#/" target="_blank" rel="noreferrer">
-          Adrien Victor © 2026 (test deploy)
+          Adrien Victor © 2021-2026 · Originally built in 2021
           <br></br>
           Website:
           <br></br>
