@@ -5,7 +5,7 @@ const CharacterItem = ({ item }) => {
     <div className='card'>
       <div className='card-inner'>
         <div className='card-front'>
-          <img src={item.img} alt='' />
+          <img src={`${process.env.PUBLIC_URL}${item.img}`} alt='' />
         </div>
         <div className='card-back'>
           <h3>{item.name}</h3>

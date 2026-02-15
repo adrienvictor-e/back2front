@@ -11,7 +11,7 @@ import Automation from './components/pages/Automation';
 import Footer from './components/Footer';
 import Lightbox from './mini-apps/FluidLightbox/Lightbox';
 import Videos from './components/pages/Videos';
-import CvLounge from './components/pages/CvLounge';
+import CvThemes from './components/pages/CvThemes';
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
       <Route path='/calendar' component={Calendar} />
       <Route path='/bbapi' component={BBapiApp} />
       <Route path='/lightbox' component={Lightbox} />
-      <Route path='/cv-lounge' component={CvLounge} />
+      <Route path='/cv-themes' component={CvThemes} />
     </Switch>
     <Footer />
     </Router>     

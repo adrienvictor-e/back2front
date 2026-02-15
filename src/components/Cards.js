@@ -6,7 +6,6 @@ import ecrdocker from '../images/ECR docker terraform.jpeg';
 import reactoverview from '../images/Vid-thumbnail.png';
 import diary from '../images/Diary.jpg'
 import jslightbox from '../images/Lightbox grid thumbnail min.jpg'
-import defaultone from '../images/default-image.jpg'
 import cvloungepreview from '../images/cv-lounge-preview.png'
 import backgroundvideo from '../videos/video-compressed.mp4'
 
@@ -69,17 +68,12 @@ function Cards() {
                         label='Frontend'
                         path='/lightbox'
                         />
-                        <CardItem 
+                        <CardItem
                         src = {cvloungepreview}
-                        text="CV Lounge (HTML version)"
-                        subtext={[<h3>✓ Personal CV rendered inside the portfolio<br></br>✓ Coming Soon: React-native CV experience</h3>]}
-                        label='Coming Soon'
-                        path='/cv-lounge'
-                        />
-                        <CardItem 
-                        src = {defaultone}
-                        text={[<cards__item__text style={{fontSize: '24px'}}><center><i class="fas fa-wrench fa-spin"></i>&nbsp;&nbsp;Coming Soon !</center></cards__item__text>]}
-                        label='Under construction'
+                        text="CV Themes"
+                        subtext={[<h3>✓ AI-designed CV themes: Spy-Fi Lounge & Infograph<br></br>✓ Click to preview, expand fullscreen, or download PDF</h3>]}
+                        label='CV'
+                        path='/cv-themes'
                         />
                     </ul>
                 </div>
