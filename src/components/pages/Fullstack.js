@@ -11,12 +11,12 @@ function Fullstack() {
         <div className='hero'>
         <h1>Fullstack Projects</h1>
         <h2 className="herosection">
-          <i class="fas fa-wrench fa-spin"></i> Ongoing construction
+          <i className="fas fa-wrench fa-spin"></i> Ongoing construction
         </h2>
         </div>
         <div className="hero-btns">
         <h4 className="hr">Interactive Calendar App</h4>
-          <h5 className="stack"><i class="fab fa-react"></i> React</h5>
+          <h5 className="stack"><i className="fab fa-react"></i> React</h5>
           <div className="description">
             <ul>
               <h3>
@@ -30,14 +30,14 @@ function Fullstack() {
             </ul>
           </div>
           <Link to='/calendar'>
-          <a id="greenb" class="button fatbaby serif round glass">
-          Interactive Calendar App <i class="fab fa-react"></i>
+          <a className="greenb button fatbaby serif round glass">
+          Interactive Calendar App <i className="fab fa-react"></i>
           </a>
           </Link>
         </div>
         <div className="hero-btns">
         <h4 className="hr">Breaking Bad API</h4>
-          <h5 className="stack"><i class="fab fa-react"></i> React</h5>
+          <h5 className="stack"><i className="fab fa-react"></i> React</h5>
           <div className="description">
             <ul>
               <h3>
@@ -57,14 +57,14 @@ function Fullstack() {
             </ul>
           </div>
           <Link to='/bbapi'>
-          <a id="greenb" class="button fatbaby serif round glass">
-          Breaking Bad API <i class="fab fa-react"></i>
+          <a className="greenb button fatbaby serif round glass">
+          Breaking Bad API <i className="fab fa-react"></i>
           </a>
           </Link>
           </div>
           <div className="hero-btns">
         <h4 className="hr">Node.js CRUD app</h4>
-          <h5 className="stack"><i class="fab fa-node"></i> Node</h5>
+          <h5 className="stack"><i className="fab fa-node"></i> Node</h5>
           <div className="description">
             <ul>
               <h3>
@@ -96,8 +96,8 @@ function Fullstack() {
             </ul>
           </div>
           <ExternalLink href="https://online-diary-adrien.up.railway.app">
-          <a id="greenb" class="button fatbaby serif round glass">
-          Node.js CRUD app <i class="fab fa-node"></i>
+          <a className="greenb button fatbaby serif round glass">
+          Node.js CRUD app <i className="fab fa-node"></i>
           </a>
           </ExternalLink>
         </div>

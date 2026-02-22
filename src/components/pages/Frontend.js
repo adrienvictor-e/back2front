@@ -11,12 +11,12 @@ function Frontend() {
         <div className='hero'>
         <h1>Frontend Projects</h1>
         <h2 className="herosection">
-          <i class="fas fa-wrench fa-spin"></i> Ongoing construction
+          <i className="fas fa-wrench fa-spin"></i> Ongoing construction
         </h2>
         </div>
         <div className="hero-btns">
         <h4 className="hr">Fluid Lightbox Popup</h4>
-          <h5 className="stack"><i class="fab fa-react"></i> React &nbsp; &nbsp; <i class="fab fa-js-square"></i>&nbsp; JavaScript</h5>
+          <h5 className="stack"><i className="fab fa-react"></i> React &nbsp; &nbsp; <i className="fab fa-js-square"></i>&nbsp; JavaScript</h5>
           <div className="description">
             <ul>
               <h3>
@@ -30,14 +30,14 @@ function Frontend() {
             </ul>
           </div>
           <Link to='/lightbox'>
-          <a id="greenb" class="button fatbaby serif round glass">
-            Fluid Lightbox Popup <i class="fab fa-js-square"></i>
+          <a className="greenb button fatbaby serif round glass">
+            Fluid Lightbox Popup <i className="fab fa-js-square"></i>
           </a>
           </Link>
         </div>
         <div className="hero-btns">
         <h4 className="hr">CV Themes</h4>
-          <h5 className="stack"><i class="fab fa-react"></i> React &nbsp; &nbsp; <i class="fab fa-css3-alt"></i>&nbsp; CSS</h5>
+          <h5 className="stack"><i className="fab fa-react"></i> React &nbsp; &nbsp; <i className="fab fa-css3-alt"></i>&nbsp; CSS</h5>
           <div className="description">
             <ul>
               <h3>
@@ -51,8 +51,8 @@ function Frontend() {
             </ul>
           </div>
           <Link to='/cv-themes'>
-          <a id="greenb" class="button fatbaby serif round glass">
-            CV Themes <i class="fab fa-react"></i>
+          <a className="greenb button fatbaby serif round glass">
+            CV Themes <i className="fab fa-react"></i>
           </a>
           </Link>
         </div>

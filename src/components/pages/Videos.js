@@ -9,12 +9,12 @@ function Videos() {
         <div className='hero'>
         <h1>My videos</h1>
         <h2 className="herosection">
-          <i class="fas fa-wrench fa-spin"></i> Ongoing construction
+          <i className="fas fa-wrench fa-spin"></i> Ongoing construction
         </h2>
         </div>
         <div className="hero-btns">
           <h4 className="hr">Terraform to deploy a React app to AWS ECR </h4>
-          <h5 className="stack"><i class="fab fa-docker"></i> Terraform, Docker & AWS</h5>
+          <h5 className="stack"><i className="fab fa-docker"></i> Terraform, Docker & AWS</h5>
           <div className="description">
             <ul>
               <h3>
@@ -34,12 +34,12 @@ function Videos() {
             </ul>
           </div>
           <div className="myvids">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/F6ikuuq0aaA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/F6ikuuq0aaA" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
           </div>
         </div>
         <div className="hero-btns">
           <h4 className="hr">React Overview, How it works, Hooks</h4>
-          <h5 className="stack"><i class="fab fa-react"></i> React</h5>
+          <h5 className="stack"><i className="fab fa-react"></i> React</h5>
           <div className="description">
             <ul>
               <h3>
@@ -56,7 +56,7 @@ function Videos() {
             </ul>
           </div>
           <div className="myvids">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/sy0IiiNEjHs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/sy0IiiNEjHs" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
           </div>
         </div>
       </div>
