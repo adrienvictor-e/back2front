@@ -10,7 +10,6 @@ Personal portfolio and project showcase built with React.
 |---------|-------|-------------|
 | Interactive Calendar | `/calendar` | Live calendar using the browser Date API with add/delete events (localStorage) |
 | Breaking Bad API | `/bbapi` | Character explorer with search and flip-card animations |
-| Chespirito Characters | `/chespirito` | Chespirito character browser with search and flip cards |
 | Fluid Lightbox | `/lightbox` | Responsive image grid with full-screen popup |
 | CV Themes | `/cv-themes` | Interactive CV viewer with Infograph and Spy-Fi Lounge themes |
 | Terraform + AWS ECR | `/videos` | Video walkthrough of deploying a containerized React app |
