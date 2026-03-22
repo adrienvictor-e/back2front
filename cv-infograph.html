@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Adrien Victor Esquerre — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    width: 210mm;
+    height: 297mm;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body { overflow: hidden; }
+
+  :root {
+    --ink: #293241;
+    --mid: #3d5a80;
+    --coral: #ee6c4d;
+    --sky: #e0fbfc;
+    --muted: #8d99ae;
+    --light: #f8f9fa;
+    --rule: #d6dbe0;
+  }
+
+  /* ─── Page ─── */
+  .page {
+    width: 210mm;
+    height: 297mm;
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+  }
+
+  /* Subtle dot grid background */
+  .dot-grid {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, rgba(61,90,128,0.06) 1px, transparent 1px);
+    background-size: 16px 16px;
+    mask-image: radial-gradient(ellipse 60% 50% at 90% 15%, black 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse 60% 50% at 90% 15%, black 0%, transparent 70%);
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    padding: 20mm 22mm 14mm;
+    color: var(--ink);
+  }
+
+  /* ─── Top bar accent ─── */
+  .accent-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3.5px;
+    background: linear-gradient(90deg, var(--coral) 0%, var(--mid) 60%, var(--coral) 100%);
+    z-index: 5;
+  }
+
+  /* ─── Header ─── */
+  .header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+
+  .header-left {
+    flex: 1;
+  }
+
+  .name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+  }
+
+  .name span {
+    color: var(--coral);
+  }
+
+  .title-line {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--mid);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 5px;
+  }
+
+  .contact-block {
+    text-align: right;
+    font-family: 'Inter', sans-serif;
+    font-size: 9.5px;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+
+  .contact-block a {
+    color: var(--mid);
+    text-decoration: none;
+  }
+
+  .contact-block .icon {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin-right: 3px;
+    vertical-align: -1.5px;
+    fill: var(--coral);
+  }
+
+  /* ─── Divider ─── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, var(--coral), var(--rule) 30%, var(--rule) 70%, var(--coral));
+    margin: 0 0 14px;
+  }
+
+  /* ─── Two-column layout ─── */
+  .columns {
+    display: flex;
+    gap: 20px;
+  }
+
+  .col-main {
+    flex: 1.15;
+  }
+
+  .col-side {
+    flex: 0.85;
+  }
+
+  /* ─── Section headers ─── */
+  .sh {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 9px;
+  }
+
+  .sh-icon {
+    width: 16px;
+    height: 16px;
+    fill: var(--coral);
+    flex-shrink: 0;
+  }
+
+  .sh-t {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  .sh-line {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ─── Skills radar chart ─── */
+  .radar-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .radar-chart {
+    flex-shrink: 0;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding-top: 4px;
+  }
+
+  .skill-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 9.5px;
+    font-weight: 500;
+    color: var(--mid);
+    background: var(--light);
+    border: 0.5px solid var(--rule);
+    border-radius: 3px;
+    padding: 3px 8px;
+    letter-spacing: 0.2px;
+  }
+
+  .skill-tag.highlight {
+    background: var(--coral);
+    color: #ffffff;
+    border-color: var(--coral);
+    font-weight: 600;
+  }
+
+  /* ─── Experience timeline ─── */
+  .timeline {
+    position: relative;
+    padding-left: 16px;
+  }
+
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 3.5px;
+    top: 6px;
+    bottom: 6px;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--coral), var(--mid) 40%, var(--rule));
+  }
+
+  .tl-item {
+    position: relative;
+    margin-bottom: 12px;
+  }
+
+  .tl-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .tl-dot {
+    position: absolute;
+    left: -16px;
+    top: 5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1.5px solid var(--coral);
+    background: #ffffff;
+  }
+
+  .tl-item:first-child .tl-dot {
+    background: var(--coral);
+  }
+
+  .tl-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1px;
+  }
+
+  .tl-role {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .tl-dates {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+
+  .tl-company {
+    font-family: 'Inter', sans-serif;
+    font-size: 10.5px;
+    font-weight: 500;
+    color: var(--coral);
+    margin-bottom: 3px;
+  }
+
+  .tl-desc {
+    list-style: none;
+    padding: 0;
+  }
+
+  .tl-desc li {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: #4a5568;
+    line-height: 1.5;
+    padding-left: 10px;
+    position: relative;
+    margin-bottom: 1px;
+  }
+
+  .tl-desc li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5.5px;
+    width: 4px;
+    height: 4px;
+    background: var(--mid);
+    border-radius: 1px;
+    transform: rotate(45deg);
+  }
+
+  /* ─── Side panels ─── */
+  .side-section {
+    margin-bottom: 16px;
+  }
+
+  /* Education */
+  .edu-item {
+    margin-bottom: 8px;
+  }
+
+  .edu-degree {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .edu-school {
+    font-family: 'Inter', sans-serif;
+    font-size: 9.5px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* Certifications */
+  .cert-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    margin-bottom: 6px;
+  }
+
+  .cert-badge {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    background: var(--light);
+    border: 0.5px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+
+  .cert-badge svg {
+    width: 10px;
+    height: 10px;
+    fill: var(--coral);
+  }
+
+  .cert-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: #4a5568;
+    line-height: 1.4;
+  }
+
+  .cert-text strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* Languages — horizontal bars */
+  .lang-item {
+    margin-bottom: 7px;
+  }
+
+  .lang-label {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+
+  .lang-level {
+    color: var(--muted);
+    font-size: 9px;
+  }
+
+  .lang-bar {
+    height: 4px;
+    background: var(--light);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .lang-fill {
+    height: 100%;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--mid), var(--coral));
+  }
+
+  /* ─── Skill domain mini cards ─── */
+  .domain-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+
+  .domain-card {
+    background: var(--light);
+    border: 0.5px solid var(--rule);
+    border-radius: 5px;
+    padding: 7px 9px;
+    border-left: 2.5px solid var(--mid);
+  }
+
+  .domain-card:nth-child(2) { border-left-color: var(--coral); }
+  .domain-card:nth-child(3) { border-left-color: #2a9d8f; }
+  .domain-card:nth-child(4) { border-left-color: #e9c46a; }
+  .domain-card:nth-child(5) { border-left-color: #9b5de5; }
+  .domain-card:nth-child(6) { border-left-color: #e76f51; }
+
+  .domain-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+
+  .domain-skills {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ─── Footer ─── */
+  .footer {
+    position: absolute;
+    bottom: 12mm;
+    left: 22mm;
+    right: 22mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+  }
+
+  .footer-left {
+    font-family: 'Inter', sans-serif;
+    font-size: 8px;
+    color: var(--muted);
+    letter-spacing: 0.3px;
+  }
+
+  .footer-dots {
+    display: flex;
+    gap: 5px;
+  }
+
+  .footer-dots span {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+  }
+
+  .footer-dots span:nth-child(1) { background: var(--coral); }
+  .footer-dots span:nth-child(2) { background: var(--mid); }
+  .footer-dots span:nth-child(3) { background: #2a9d8f; }
+</style>
+</head>
+<body>
+<div class="page">
+<div class="accent-bar"></div>
+<div class="dot-grid"></div>
+<div class="content">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="name">Adrien Victor<br><span>Esquerre</span></div>
+      <div class="title-line">Senior DevOps &middot; IaC &middot; AI Agent Orchestration</div>
+    </div>
+    <div class="contact-block">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>Prague, Czechia<br>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2z"/></svg>+420 77 888 44 56<br>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>esquerre.adrien@gmail.com<br>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg><a href="https://adrienvictor.com">adrienvictor.com</a><br>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg><a href="https://linkedin.com/in/adrienvictor">linkedin.com/in/adrienvictor</a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Skill domains + Radar chart -->
+  <div class="radar-section">
+    <!-- SVG Radar Chart -->
+    <svg class="radar-chart" width="140" height="140" viewBox="0 0 200 200">
+      <defs>
+        <linearGradient id="radarFill" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#3d5a80;stop-opacity:0.25"/>
+          <stop offset="100%" style="stop-color:#ee6c4d;stop-opacity:0.15"/>
+        </linearGradient>
+      </defs>
+      <!-- Grid rings -->
+      <polygon points="100,30 160,65 160,135 100,170 40,135 40,65" fill="none" stroke="#d6dbe0" stroke-width="0.5"/>
+      <polygon points="100,48 145,75 145,125 100,152 55,125 55,75" fill="none" stroke="#d6dbe0" stroke-width="0.5"/>
+      <polygon points="100,65 130,82 130,118 100,135 70,118 70,82" fill="none" stroke="#d6dbe0" stroke-width="0.5"/>
+      <polygon points="100,82 115,91 115,109 100,118 85,109 85,91" fill="none" stroke="#d6dbe0" stroke-width="0.5"/>
+      <!-- Axes -->
+      <line x1="100" y1="100" x2="100" y2="30" stroke="#d6dbe0" stroke-width="0.5"/>
+      <line x1="100" y1="100" x2="160" y2="65" stroke="#d6dbe0" stroke-width="0.5"/>
+      <line x1="100" y1="100" x2="160" y2="135" stroke="#d6dbe0" stroke-width="0.5"/>
+      <line x1="100" y1="100" x2="100" y2="170" stroke="#d6dbe0" stroke-width="0.5"/>
+      <line x1="100" y1="100" x2="40" y2="135" stroke="#d6dbe0" stroke-width="0.5"/>
+      <line x1="100" y1="100" x2="40" y2="65" stroke="#d6dbe0" stroke-width="0.5"/>
+      <!-- Data polygon (IaC:95, CI/CD:90, Cloud:90, Observability:85, Coding:85, AI:80) -->
+      <polygon
+        points="100,33 157,68 155,130 100,155 48,128 45,68"
+        fill="url(#radarFill)"
+        stroke="var(--coral)"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+      <!-- Data points -->
+      <circle cx="100" cy="33" r="3" fill="var(--coral)"/>
+      <circle cx="157" cy="68" r="3" fill="var(--coral)"/>
+      <circle cx="155" cy="130" r="3" fill="var(--coral)"/>
+      <circle cx="100" cy="155" r="3" fill="var(--coral)"/>
+      <circle cx="48" cy="128" r="3" fill="var(--coral)"/>
+      <circle cx="45" cy="68" r="3" fill="var(--coral)"/>
+      <!-- Labels -->
+      <text x="100" y="22" text-anchor="middle" font-family="Space Grotesk" font-size="9" font-weight="600" fill="#293241">IaC</text>
+      <text x="170" y="64" text-anchor="start" font-family="Space Grotesk" font-size="9" font-weight="600" fill="#293241">CI/CD</text>
+      <text x="170" y="138" text-anchor="start" font-family="Space Grotesk" font-size="9" font-weight="600" fill="#293241">Cloud</text>
+      <text x="100" y="186" text-anchor="middle" font-family="Space Grotesk" font-size="9" font-weight="600" fill="#293241">Observability</text>
+      <text x="30" y="138" text-anchor="end" font-family="Space Grotesk" font-size="9" font-weight="600" fill="#293241">IoT</text>
+      <text x="30" y="64" text-anchor="end" font-family="Space Grotesk" font-size="8" font-weight="600" fill="#293241">Agentic AI</text>
+    </svg>
+
+    <!-- Skill pill tags -->
+    <div class="skill-tags">
+      <span class="skill-tag">Terraform</span>
+      <span class="skill-tag">AWS</span>
+      <span class="skill-tag">Ansible</span>
+      <span class="skill-tag">Docker</span>
+      <span class="skill-tag">GitHub Actions</span>
+      <span class="skill-tag">Jenkins</span>
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">Bash</span>
+      <span class="skill-tag">Git</span>
+      <span class="skill-tag">Linux</span>
+      <span class="skill-tag">React.js</span>
+      <span class="skill-tag">Node.js</span>
+      <span class="skill-tag">Elasticsearch</span>
+      <span class="skill-tag">Grafana</span>
+      <span class="skill-tag highlight">AI Agents</span>
+      <span class="skill-tag highlight">MCP</span>
+      <span class="skill-tag">n8n</span>
+    </div>
+  </div>
+
+  <!-- Two columns -->
+  <div class="columns">
+
+    <!-- Main column — Experience -->
+    <div class="col-main">
+      <div class="sh">
+        <svg class="sh-icon" viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6 0h-4V4h4v2z"/></svg>
+        <span class="sh-t">Experience</span>
+        <span class="sh-line"></span>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-header">
+            <span class="tl-role">Infrastructure Engineer</span>
+            <span class="tl-dates">Jun 2022 &ndash; Present</span>
+          </div>
+          <div class="tl-company">MSD Czech Republic, Prague</div>
+          <ul class="tl-desc">
+            <li>Automated Elasticsearch cluster provisioning and configuration through Ansible playbooks, Terraform/Terragrunt modules, and CI/CD pipelines (Jenkins, GitHub Actions)</li>
+            <li>Architecture design and infrastructure provisioning for Disaster Recovery to back up AWS regions holding Logic Monitor clusters</li>
+            <li>Built modular Python tooling to monitor and tune Elasticsearch/ELK stack performance via automated API orchestration</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-header">
+            <span class="tl-role">Full-stack Developer</span>
+            <span class="tl-dates">Sep 2020 &ndash; May 2022</span>
+          </div>
+          <div class="tl-company">Freelance</div>
+          <ul class="tl-desc">
+            <li>Delivered end-to-end web and e-commerce applications for clients using React.js, Node.js, and WordPress</li>
+            <li>Deployed and maintained cloud infrastructure on AWS, handling CI/CD, hosting, and domain configuration</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-header">
+            <span class="tl-role">Google Ads Consultant</span>
+            <span class="tl-dates">Nov 2019 &ndash; Sep 2020</span>
+          </div>
+          <div class="tl-company">Accenture (for Google), Ireland</div>
+          <ul class="tl-desc">
+            <li>Technical solutions for Google Ads, YouTube Ads, Merchant Center; optimized ROI for French clients</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-header">
+            <span class="tl-role">EDI Specialist</span>
+            <span class="tl-dates">Oct 2018 &ndash; Oct 2019</span>
+          </div>
+          <div class="tl-company">Arvato, Germany</div>
+          <ul class="tl-desc">
+            <li>Managed EDI data mapping and integration pipelines for medical product supply chains, including SAP-based order tracking and ML-assisted classification</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-header">
+            <span class="tl-role">Magistrate Judge</span>
+            <span class="tl-dates">2015 &ndash; 2018</span>
+          </div>
+          <div class="tl-company">Consejo de la Judicatura, Ecuador</div>
+          <ul class="tl-desc">
+            <li>Presided over district court hearings and authored published judicial verdicts in public procurement, comptroller general, administrative disciplinary law, and intellectual property. Published verdicts: adrienesquerre.blogspot.com</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Side column -->
+    <div class="col-side">
+
+      <!-- Skill domains -->
+      <div class="side-section">
+        <div class="sh">
+          <svg class="sh-icon" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+          <span class="sh-t">Domains</span>
+          <span class="sh-line"></span>
+        </div>
+        <div class="domain-grid">
+          <div class="domain-card">
+            <div class="domain-title">Infrastructure</div>
+            <div class="domain-skills">Terraform, AWS, Ansible</div>
+          </div>
+          <div class="domain-card">
+            <div class="domain-title">CI / CD</div>
+            <div class="domain-skills">GitHub Actions, Jenkins</div>
+          </div>
+          <div class="domain-card">
+            <div class="domain-title">Observability</div>
+            <div class="domain-skills">Elasticsearch, Grafana</div>
+          </div>
+          <div class="domain-card">
+            <div class="domain-title">AI & Automation</div>
+            <div class="domain-skills">MCP, Agents, n8n</div>
+          </div>
+          <div class="domain-card">
+            <div class="domain-title">Development</div>
+            <div class="domain-skills">Python, React, Node.js</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="side-section">
+        <div class="sh">
+          <svg class="sh-icon" viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+          <span class="sh-t">Education</span>
+          <span class="sh-line"></span>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">MSc Advanced Legal Sciences</div>
+          <div class="edu-school">Universitat Pompeu Fabra, Barcelona &middot; 2008</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">Lawyer</div>
+          <div class="edu-school">UISEK University, Ecuador &middot; 2007</div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="side-section">
+        <div class="sh">
+          <svg class="sh-icon" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+          <span class="sh-t">Certifications</span>
+          <span class="sh-line"></span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-badge"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
+          <div class="cert-text"><strong>AWS Certified Developer Associate</strong><br>2021</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-badge"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
+          <div class="cert-text"><strong>Google Ads Certified</strong><br>2020</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-badge"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
+          <div class="cert-text"><strong>Google Analytics Certified</strong><br>2020</div>
+        </div>
+      </div>
+
+      <!-- Languages -->
+      <div class="side-section">
+        <div class="sh">
+          <svg class="sh-icon" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95a15.65 15.65 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.92 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56A7.987 7.987 0 0 1 5.08 16zm2.95-8H5.08a7.987 7.987 0 0 1 4.33-3.56A15.65 15.65 0 0 0 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2s.07-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg>
+          <span class="sh-t">Languages</span>
+          <span class="sh-line"></span>
+        </div>
+        <div class="lang-item">
+          <div class="lang-label"><span>English</span><span class="lang-level">Fluent</span></div>
+          <div class="lang-bar"><div class="lang-fill" style="width: 95%"></div></div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-label"><span>French</span><span class="lang-level">Native</span></div>
+          <div class="lang-bar"><div class="lang-fill" style="width: 100%"></div></div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-label"><span>Spanish</span><span class="lang-level">Native</span></div>
+          <div class="lang-bar"><div class="lang-fill" style="width: 100%"></div></div>
+        </div>
+      </div>
+
+    </div><!-- /col-side -->
+  </div><!-- /columns -->
+
+</div><!-- /content -->
+
+<!-- Footer -->
+<div class="footer">
+  <span class="footer-left">Prague, Czechia &middot; esquerre.adrien@gmail.com &middot; adrienvictor.com</span>
+  <div class="footer-dots">
+    <span></span><span></span><span></span>
+  </div>
+</div>
+
+</div><!-- /page -->
+</body>
+</html>
