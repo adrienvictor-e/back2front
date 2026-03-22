@@ -6,16 +6,16 @@ Personal portfolio and project showcase built with React.
 
 ## Projects
 
-| Project | Category | Route | Description |
-|---------|----------|-------|-------------|
-| Kubernetes Homelab | Infrastructure | [lab.adrienesquerre.com](https://lab.adrienesquerre.com) | 2x Raspberry Pi 5 running K3s with real-time Grafana dashboards, accessible worldwide via Cloudflare Tunnel |
-| Terraform + AWS ECR | Infrastructure / Video | `/videos`, `/infrastructure` | Containerized React app deployed to AWS ECR using Terraform |
-| Vector Databases & RAG | Video | `/videos` | How vector DBs and RAG enable secure AI interaction with private enterprise data |
-| Interactive Calendar | Fullstack | `/calendar` | Live calendar using the browser Date API with add/delete events (localStorage) |
-| Breaking Bad API | Fullstack | `/bbapi` | Character explorer with search and flip-card animations |
-| Node.js CRUD app | Back-end | [external](https://online-diary-adrien.onrender.com/) | Google auth, public/private stories stored in cloud MongoDB |
-| Fluid Lightbox | Front-end | `/lightbox` | Responsive image grid with full-screen popup |
-| CV Themes | Front-end | `/cv-themes` | AI-designed CV themes: Spy-Fi Lounge & Infograph |
+| Category | Project | Route | Description |
+|----------|---------|-------|-------------|
+| **Infrastructure** | Kubernetes Homelab | [lab.adrienesquerre.com](https://lab.adrienesquerre.com) | 2x Raspberry Pi 5 running K3s with real-time Grafana dashboards, accessible worldwide via Cloudflare Tunnel |
+| | Terraform + AWS ECR | `/videos`, `/infrastructure` | Containerized React app deployed to AWS ECR using Terraform |
+| **Video** | Vector Databases & RAG | `/videos` | How vector DBs and RAG enable secure AI interaction with private enterprise data |
+| **Fullstack** | Interactive Calendar | `/calendar` | Live calendar using the browser Date API with add/delete events (localStorage) |
+| | Breaking Bad API | `/bbapi` | Character explorer with search and flip-card animations |
+| **Back-end** | Node.js CRUD app | [external](https://online-diary-adrien.onrender.com/) | Google auth, public/private stories stored in cloud MongoDB |
+| **Front-end** | Fluid Lightbox | `/lightbox` | Responsive image grid with full-screen popup |
+| | CV Themes | `/cv-themes` | AI-designed CV themes: Spy-Fi Lounge & Infograph |
 
 ## Tech Stack
 
