@@ -10,7 +10,7 @@ Personal portfolio and project showcase built with React.
 <tr><th>Category</th><th>Project</th><th>Route</th><th>Description</th></tr>
 <tr><td rowspan="2"><strong>Infrastructure</strong></td><td>Kubernetes Homelab</td><td><a href="https://lab.adrienesquerre.com">lab.adrienesquerre.com</a></td><td>2x Raspberry Pi 5 running K3s with real-time Grafana dashboards via Cloudflare Tunnel</td></tr>
 <tr><td>Terraform + AWS ECR</td><td><code>/infrastructure</code></td><td>Containerized React app deployed to AWS ECR using Terraform</td></tr>
-<tr><td><strong>Video</strong></td><td>Vector Databases & RAG</td><td><code>/videos</code></td><td>How vector DBs and RAG enable secure AI interaction with private enterprise data</td></tr>
+<tr><td><strong>AI</strong></td><td>Vector Databases & RAG</td><td><code>/videos</code></td><td>How vector DBs and RAG enable secure AI interaction with private enterprise data</td></tr>
 <tr><td rowspan="2"><strong>Fullstack</strong></td><td>Interactive Calendar</td><td><code>/calendar</code></td><td>Live calendar with browser Date API, add/delete events (localStorage)</td></tr>
 <tr><td>Breaking Bad API</td><td><code>/bbapi</code></td><td>Character explorer with search and flip-card animations</td></tr>
 <tr><td><strong>Back-end</strong></td><td>Node.js CRUD app</td><td><a href="https://online-diary-adrien.onrender.com/">external</a></td><td>Google auth, public/private stories in cloud MongoDB</td></tr>
