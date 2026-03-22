@@ -11,6 +11,8 @@ Personal portfolio and project showcase built with React.
 | Infrastructure | Kubernetes Homelab | [lab.adrienesquerre.com](https://lab.adrienesquerre.com) | 2x Raspberry Pi 5 running K3s with real-time Grafana dashboards via Cloudflare Tunnel |
 | Infrastructure | Terraform + AWS ECR | `/infrastructure` | Containerized React app deployed to AWS ECR using Terraform |
 | AI | Vector Databases & RAG | `/videos` | How vector DBs and RAG enable secure AI interaction with private enterprise data |
+| Video | Terraform + AWS ECR | `/videos` | Video walkthrough of deploying a containerized React app to AWS ECR |
+| Video | React Overview & Hooks | `/videos` | Learn how React works under the hood, internals and Hooks |
 | Fullstack | Interactive Calendar | `/calendar` | Live calendar with browser Date API, add/delete events (localStorage) |
 | Fullstack | Breaking Bad API | `/bbapi` | Character explorer with search and flip-card animations |
 | Back-end | Node.js CRUD app | [external](https://online-diary-adrien.onrender.com/) | Google auth, public/private stories in cloud MongoDB |
