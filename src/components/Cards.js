@@ -9,7 +9,7 @@ import diary from '../images/Diary.jpg'
 import jslightbox from '../images/Lightbox grid thumbnail min.jpg'
 import cvinfographpreview from '../images/cv-infograph-preview.png'
 import homelabpreview from '../images/Kub-homelab-2-thumb.png'
-import vectordbrag from '../images/ThumbnailVDB3.png'
+import vectordbrag from '../images/ThumbnailVDB4.png'
 /* background video removed — using CSS aurora background */
 
 
